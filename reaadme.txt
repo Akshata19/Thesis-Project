@@ -1,0 +1,5 @@
+to execute Rasa 
+  C:\Users\Akshata\Desktop> cd rasa
+ C:\Users\Akshata\Desktop\rasa> rasa run --enable-api --cors "*" 
+
+In another terminal execute "ng serve"  to run FE
