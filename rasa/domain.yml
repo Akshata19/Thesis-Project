@@ -1,0 +1,50 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_help
+  - delivery_help
+  - return_help
+  - refund_help
+  - something_else
+
+responses:
+  utter_goodbye:
+    - text: "Goodbye! Let me know if you need help with anything else."
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+    
+  utter_greet:
+    - text: "Hi, I'm your virtual shopping assistant. How can I help you today?"
+      buttons:
+        - title: "A delivery, return or refund"
+          payload: "/ask_help"
+        - title: "Something else"
+          payload: "/something_else"
+
+  utter_ask_help:
+    - text: "What would you like help with?"
+      buttons:
+        - title: "Track my order"
+          payload: "/delivery_help"
+        - title: "Start a return"
+          payload: "/return_help"
+        - title: "Request a refund"
+          payload: "/refund_help"
+
+  utter_something_else:
+    - text: "Please enter your question below or select an option from the menu."
+
+  utter_delivery_help:
+    - text: "Sure, to track your order, please provide your order number."
+
+  utter_return_help:
+    - text: "To start a return, please share the order number and reason for return."
+
+  utter_refund_help:
+    - text: "Refunds are usually processed within 5-7 business days. Let me help you with yours."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
