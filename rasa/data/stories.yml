@@ -30,4 +30,3 @@ stories:
   steps:
     - intent: something_else
     - action: utter_something_else
-    - intent: something
