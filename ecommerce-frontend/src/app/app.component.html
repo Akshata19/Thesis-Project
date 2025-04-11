@@ -1,9 +1,9 @@
 
 <div style="background-color: ghostwhite;">
-    <app-navbar (helpClicked)="openChat()"></app-navbar>
+    <app-navbar (helpClicked)="openChat()" (helpClicked1)="openChat1()"></app-navbar>
         
-    <app-chattbot *ngIf="chatVisible" (close)="closeChat()"></app-chattbot>
-
+    <app-chattbot *ngIf="chatVisible" [chatbotEndpoint]="'http://localhost:5005/webhooks/rest/webhook'" (close)="closeChat()"></app-chattbot>
+    <app-chatbot2  *ngIf="chatVisible1" (close)="closeChat1()"></app-chatbot2>
 
 <router-outlet></router-outlet>
 </div>

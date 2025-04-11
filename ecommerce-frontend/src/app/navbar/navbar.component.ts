@@ -26,8 +26,13 @@ export class NavbarComponent {
   }
 
   @Output() helpClicked = new EventEmitter<void>();
+  @Output() helpClicked1 = new EventEmitter<void>();
 
   openHelp(): void {
     this.helpClicked.emit();
+  }
+
+  openHelp1(): void {
+    this.helpClicked1.emit();
   }
 }
