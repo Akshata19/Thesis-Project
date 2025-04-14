@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule, CommonModule], 
+  imports: [RouterModule, CommonModule],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
   username: string | null = null;
@@ -27,12 +27,25 @@ export class NavbarComponent {
 
   @Output() helpClicked = new EventEmitter<void>();
   @Output() helpClicked1 = new EventEmitter<void>();
-
+  @Output() helpClicked3 = new EventEmitter<void>();
+  @Output() helpClicked4 = new EventEmitter<void>();
+  @Output() helpClicked5 = new EventEmitter<void>();
   openHelp(): void {
     this.helpClicked.emit();
   }
 
   openHelp1(): void {
     this.helpClicked1.emit();
+  }
+
+  openHelp3(): void {
+    this.helpClicked3.emit();
+  }
+
+  openHelp4(): void {
+    this.helpClicked4.emit();
+  }
+  openHelp5(): void {
+    this.helpClicked5.emit();
   }
 }
