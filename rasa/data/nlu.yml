@@ -104,6 +104,34 @@ nlu:
       - [999000](order_id)
       - order number is [555666](order_id)
       - check order [7777](order_id)
+  - intent: ask_help
+    examples: |
+      - I need help
+      - Please help me
+      - Can you help me?
+      - I require assistance
+
+  - intent: delivery_help
+    examples: |
+      - track my order
+      - where is my order
+      - I want to track my order
+      - check order status
+      - track order
+
+  - intent: return_help
+    examples: |
+      - I want to return my order
+      - How do I return an item?
+      - return this item
+      - I need to return something
+
+  - intent: refund_help
+    examples: |
+      - I want a refund
+      - refund my order
+      - How do I get my money back?
+      - I need a refund
 
   # Second chatbot intents
   - intent: greet_second

@@ -94,13 +94,20 @@ responses:
 
   # Second chatbot responses
   utter_second_greet:
-    - text: "Hello, I am the second chatbot. How can I assist you today?"
-
+    - text: "Hello, I am your Shop Sphere chatbot."
+    - text: "How can I help you today? Just write in the text box or use one of our quick answers."
+      buttons:
+        - title: "A delivery, return or refund"
+          payload: "/ask_help"
+        - title: "Something else"
+          payload: "/something_else"
+          
   utter_second_goodbye:
     - text: "Goodbye, I hope I helped. See you later!"
 
 actions:
   - action_log_ticket
+  - action_delayed_greeting
 
 session_config:
   session_expiration_time: 60

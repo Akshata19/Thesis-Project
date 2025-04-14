@@ -52,6 +52,6 @@ stories:
   - story: second_chatbot_flow
     steps:
       - intent: greet_second
-      - action: utter_second_greet
+      - action: action_delayed_greeting
       - intent: goodbye_second
       - action: utter_second_goodbye

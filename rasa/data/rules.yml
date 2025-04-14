@@ -15,7 +15,7 @@ rules:
 - rule: second_chatbot_greet_rule
   steps:
     - intent: greet_second
-    - action: utter_second_greet
+    - action: action_delayed_greeting
 
 - rule: second_chatbot_goodbye_rule
   steps:
