@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -10,13 +15,14 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [RouterLink, CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './registration.component.html',
-  styleUrl: './registration.component.scss'
+  styleUrl: './registration.component.scss',
 })
 export class RegistrationComponent {
   registrationForm: FormGroup;
   submitted = false;
   loading = false;
   error: string = '';
+  showPassword = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -27,7 +33,7 @@ export class RegistrationComponent {
     this.registrationForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
@@ -53,11 +59,11 @@ export class RegistrationComponent {
         console.log('User registered successfully:', res);
         this.router.navigate(['/login']); // Redirect to login page
       },
-      error: (err: { error: { message: string; }; }) => {
+      error: (err: { error: { message: string } }) => {
         console.error('Error registering user:', err);
         this.error = err.error.message || 'Failed to register.';
         this.loading = false;
-      }
+      },
     });
   }
 }

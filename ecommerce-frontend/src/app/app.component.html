@@ -33,7 +33,6 @@
   <app-chatbot5
     *ngIf="chatVisible5"
     [chatbotEndpoint]="'http://localhost:5005/webhooks/rest/webhook'"
-    [username]="this.username"
     (close)="closeChat5()"
   ></app-chatbot5>
   <router-outlet></router-outlet>

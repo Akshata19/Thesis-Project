@@ -1,37 +1,24 @@
-<section id="categories" class="mt-1">
-    <div class="container">
-      <div class="row">
-        <!-- Loading Spinner -->
-        <div *ngIf="!categories" class="m-auto">
-          <h1 class="text-center display-3 mt-5">
-            <i class="fa fa-spinner fa-spin"></i>
-          </h1>
-        </div>
-  
-        <!-- Category Cards -->
-        <div *ngIf="categories" class="row">
-          <div *ngFor="let category of categories" class="col-md-4 mb-6">
-            <div class="card h-200 shadow-sm">
-              <img
-                [src]="category.image || 'assets/default-category.jpg'"
-                class="card-img-top"
-                [alt]="category.name"
-                style="height: 150px; object-fit: cover;"
-              />
-              <div class="card-body text-center">
-                <h6 style="font-family: Arial, Helvetica, sans-serif; font-weight: 800;"  class="card-title">{{ category.name }}</h6>
-                 <button mat-stroked-button
-                color="primary"
-                (click)="navigateToCategory(category._id)"
-                class="mt-2"
-              >
-                Explore
-              </button>
-              </div>
-            </div>
-          </div>
-        </div>
+<div *ngIf="categories" class="row gx-1 gy-2">
+  <div *ngFor="let category of categories" class="col-md-6 col-lg-4">
+    <div
+      class="category-nike-card position-relative text-white rounded overflow-hidden shadow-sm"
+    >
+      <img
+        [src]="getImagePath(category.name)"
+        [alt]="category.name"
+        class="img-fluid w-100 h-100 object-fit-cover"
+      />
+      <div class="overlay p-4">
+        <p class="small fw-light mb-1">Top Picks</p>
+        <h5 class="fw-bold mb-2">{{ category.name }}</h5>
+        <button
+          mat-stroked-button
+          color="primary"
+          (click)="navigateToCategory(category._id)"
+        >
+          Explore
+        </button>
       </div>
     </div>
-  </section>
-  
+  </div>
+</div>

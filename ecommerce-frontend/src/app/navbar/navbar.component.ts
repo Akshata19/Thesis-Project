@@ -1,23 +1,24 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  username: string | null = null;
-
-  constructor(private authService: AuthService) {}
+  user: any = null;
+  searchQuery: string = '';
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.user$.subscribe((user) => {
-      this.username = user;
+      this.user = user; // now user is full object: { _id, username, email }
     });
   }
 
@@ -47,5 +48,13 @@ export class NavbarComponent {
   }
   openHelp5(): void {
     this.helpClicked5.emit();
+  }
+
+  search(): void {
+    if (this.searchQuery.trim()) {
+      this.router.navigate(['/products'], {
+        queryParams: { search: this.searchQuery.trim() },
+      });
+    }
   }
 }

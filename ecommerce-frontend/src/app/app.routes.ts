@@ -13,11 +13,11 @@ export const appRoutes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'cart', component: CartComponent },
- // { path: '**', redirectTo: '', pathMatch: 'full' }, // Wildcard route for invalid URLs
+  // { path: '**', redirectTo: '', pathMatch: 'full' }, // Wildcard route for invalid URLs
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:categoryId', component: ProductListComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'chat', component: ChattbotComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
