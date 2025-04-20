@@ -134,50 +134,48 @@
   }
 
   /* Styling for the quick reply buttons */
-.rich-menu {
-  width: auto;
-  margin-top: 10px;
-  margin-left: 30px;
-}
-
-
-.rich-menu-items {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* Vertically aligned buttons */
-  font-size: small;
-  border-radius: 6px;
-  overflow: hidden; 
-  width: fit-content;
- 
-}
-.rich-menu-items li:last-child .rich-menu-item {
-  border-radius: 0 0 8px 8px; /* bottom rounded */
-}
-
-/* Top rounded corners for the first button */
-.rich-menu-items li:first-child .rich-menu-item {
-  border-radius: 8px 8px 0 0; /* top rounded */
-}
-.rich-menu-item {
-  padding: 10px 15px;
-  background-color: #fdfcfce2;
-  color: #2a2a2a;
-  border: 1px solid #ddd; /* Add border for partition effect */
-  /* Rounded corners */
-  font-weight: 500;
-  cursor: pointer;
-  text-align: center;
-  width: 100%; /* Ensure buttons are the same width */
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
-
-  &:hover {
-    background-color: #2a2a2a;
-    color: white;
+  .rich-menu {
+    width: auto;
+    margin-top: 10px;
+    margin-left: 30px;
   }
-}
+
+  .rich-menu-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Vertically aligned buttons */
+    font-size: small;
+    border-radius: 6px;
+    overflow: hidden;
+    width: fit-content;
+  }
+  .rich-menu-items li:last-child .rich-menu-item {
+    border-radius: 0 0 8px 8px; /* bottom rounded */
+  }
+
+  /* Top rounded corners for the first button */
+  .rich-menu-items li:first-child .rich-menu-item {
+    border-radius: 8px 8px 0 0; /* top rounded */
+  }
+  .rich-menu-item {
+    padding: 10px 15px;
+    background-color: #fdfcfce2;
+    color: #2a2a2a;
+    border: 1px solid #ddd; /* Add border for partition effect */
+    /* Rounded corners */
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    width: 100%; /* Ensure buttons are the same width */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+
+    &:hover {
+      background-color: #2a2a2a;
+      color: white;
+    }
+  }
 }
 /* Alignment for messages */
 .message-wrapper {
@@ -191,4 +189,76 @@
 
 .align-right {
   justify-content: flex-end;
+}
+.chat-login-form {
+  padding: 1.5rem;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .form-control {
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    margin-bottom: 12px;
+
+    &:focus {
+      border-color: #000;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .form-check {
+    text-align: left;
+    font-size: 13px;
+    color: #444;
+
+    input {
+      margin-right: 8px;
+    }
+
+    label {
+      line-height: 1.4;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+
+  .btn {
+    font-size: 15px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #444;
+    color: #fff;
+    border: none;
+
+    &:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+  }
+
+  .text-danger {
+    font-size: 12px;
+    color: #dc3545;
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+}
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: block;
 }

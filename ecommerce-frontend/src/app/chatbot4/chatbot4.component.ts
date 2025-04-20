@@ -29,6 +29,8 @@ export class Chatbot4Component {
   @Input() chatbotEndpoint: string =
     'http://localhost:5005/webhooks/rest/webhook';
   @Input() username: string = 'User';
+  @Output() minimize = new EventEmitter<void>();
+
   userMessage = '';
   isTyping = false;
   isChatOpen = true;
@@ -324,5 +326,14 @@ export class Chatbot4Component {
       console.log('Selected file:', file);
       // Optional: send to backend, preview, etc.
     }
+  }
+
+  minimizeChat(): void {
+    this.minimize.emit();
+    this.isMinimized = true;
+  }
+
+  restoreChat(): void {
+    this.isMinimized = false;
   }
 }

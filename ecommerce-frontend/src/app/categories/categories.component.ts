@@ -49,7 +49,6 @@ export class CategoriesComponent implements OnInit {
     );
   }
   navigateToCategory(categoryId: string): void {
-    console.log('inside navigate method' + categoryId);
     this.router.navigate([`/categories/${categoryId}`]).then(
       (success) => {
         if (success) {
@@ -88,7 +87,6 @@ export class CategoriesComponent implements OnInit {
   }
 
   getImagePath(categoryName: string): string {
-    console.log(`assets/images/category/${categoryName.toLowerCase()}.png`);
     return `assets/images/category/${categoryName.toLowerCase()}.png`;
   }
 }

@@ -89,20 +89,52 @@
 
       <!-- Right-Aligned User & Help -->
       <ul class="navbar-nav ms-auto align-items-center">
-        <li *ngIf="user" class="nav-item d-flex align-items-center me-3">
-          <span class="nav-link">Hello, {{ user.username }}</span>
-        </li>
-        <li *ngIf="user" class="nav-item">
-          <button
-            class="btn btn-link nav-link p-0"
-            (click)="logout()"
-            title="Logout"
+        <!-- ✅ Avatar & Dropdown if User is Logged In -->
+        <li *ngIf="user && user.username" class="nav-item dropdown me-3">
+          <a
+            class="nav-link d-flex align-items-center dropdown-toggle"
+            href="#"
+            id="userDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
-            <i class="fa fa-sign-out-alt"></i>
-          </button>
+            <div
+              class="avatar-circle bg-primary text-white me-2"
+              title="{{ user.username }}"
+            >
+              {{ user.username.charAt(0) | uppercase }}
+            </div>
+            <span *ngIf="user.username">{{ user.username }}</span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="userDropdown"
+          >
+            <li>
+              <a class="dropdown-item" routerLink="/account">My Account</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/change-username"
+                >Change Username</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/change-password"
+                >Change Password</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <button class="dropdown-item text-danger" (click)="logout()">
+                Logout
+              </button>
+            </li>
+          </ul>
         </li>
 
-        <li *ngIf="!user" class="nav-item">
+        <!-- If not logged in: Show Login & Register -->
+        <li *ngIf="!user || !user.username" class="nav-item">
           <a class="nav-link" routerLink="/login">
             <i class="fa fa-sign-in-alt me-1"></i> Login
           </a>
