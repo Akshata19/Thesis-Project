@@ -38,6 +38,7 @@ class ActionDelayedGreeting(Action):
             text=" ",
             buttons=[
                 {"title": "A delivery, return or refund", "payload": "/ask_help"},
+                {"title": "My Account", "payload": "/my_account"},
                 {"title": "Something else", "payload": "/something_else"}
             ]
         )

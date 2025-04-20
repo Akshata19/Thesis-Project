@@ -132,7 +132,6 @@ nlu:
       - refund my order
       - How do I get my money back?
       - I need a refund
-
   # Second chatbot intents
   - intent: greet_second
     examples: |
@@ -147,6 +146,33 @@ nlu:
       - Goodbye second bot
       - See you later, second bot
       - Bye bye second bot
+
+  - intent: my_account
+    examples: |
+      - my account
+      - account settings
+      - I want to change my account details
+      - show me account options
+      - manage my account
+
+  - intent: change_password
+    examples: |
+      - change my password
+      - I forgot my password
+      - reset password
+      - how can I change my password
+
+  - intent: change_username
+    examples: |
+      - change my username
+      - I want to update my username
+      - edit my username
+
+  - intent: delete_account
+    examples: |
+      - delete my account
+      - remove my profile
+      - I want to delete my account permanently
 
   # Regex for order_id
   - regex: order_id

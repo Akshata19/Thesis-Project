@@ -11,7 +11,11 @@ intents:
   - provide_order_id
   - go_to_main_menu
   - deny
- 
+  - my_account
+  - change_password
+  - change_username
+  - delete_account
+
   # Second chatbot intents
 
   - greet_second
@@ -29,6 +33,23 @@ slots:
         entity: order_id
 
 responses:
+  utter_my_account_options:
+    - text: "Here are some account options:"
+      buttons:
+        - title: "Change Password"
+          payload: /change_password
+        - title: "Change Username"
+          payload: /change_username
+        - title: "Delete Account"
+          payload: /delete_account
+        - title: "Back to Main Menu"
+          payload: /go_to_main_menu
+  utter_change_password:
+    - text: "To change your password, please go to your profile settings or use the account section in the app."
+  utter_change_username:
+    - text: "To update your username, visit your profile section or contact support."
+  utter_delete_account:
+    - text: "Deleting your account is permanent. To proceed, please visit your profile settings or contact support directly."
   utter_greet:
     - text: "Hi, I'm your virtual shopping assistant. How can I help you today?"
       buttons:
@@ -62,10 +83,9 @@ responses:
     - text: "Please enter your question below or select an option from the menu."
 
   utter_talk_to_agent_scripted:
-  - text: |
-      Hey, this is Priya from customer support. I’ll assist you with that.  
-      Could you please confirm your order ID so I can check the details?
-
+    - text: |
+        Hey, this is Priya from customer support. I’ll assist you with that.  
+        Could you please confirm your order ID so I can check the details?
 
   utter_ticket_logged:
     - text: "Thanks! I've logged the issue for Order ID {order_id}. You'll receive an update within 24 hours."
@@ -83,6 +103,8 @@ responses:
       buttons:
         - title: "A delivery, return or refund"
           payload: "/ask_help"
+        - title: " My Account"
+          payload: "/my_account"
         - title: "Something else"
           payload: "/something_else"
 
@@ -101,7 +123,7 @@ responses:
           payload: "/ask_help"
         - title: "Something else"
           payload: "/something_else"
-          
+
   utter_second_goodbye:
     - text: "Goodbye, I hope I helped. See you later!"
 
